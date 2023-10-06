@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    
+</head>
+<body>
+
+    <div class=" border-bottom  " >
+        <header class="text-center ">
+                <span class="fs-3">Facultad de Tecnologia y Ciencias Aplicadas</span><br>           
+                <span class="fs-3">Modelos y simulacion</span>
+        </header>
+      </div>
+    <br><br>
+
+    <div class="container-fluid row col-12 ">
+        <div class="card border-primary " id="card" style="max-width: 22rem; margin: auto;">
+            <div class="card-header row " >
+                <h2 class="text-center">Congruencial Multiplicativo</h2>         
+            </div>
+                <div class="card-body text-primary">
+                    <form>
+                        <div class="mb-3">
+                            <label class="col-form-label" for="labelSemilla">Ingrese el valor de la semilla:</label>
+                            <input class="form-control" type="number" id="semilla" class="claseSemilla" name="semilla" >
+                            <label class="col-form-label" for="labelA">Ingrese el valor de A:</label>
+                            <input class="form-control" type="number" id="A" class="numeroA" name="numeroA" >
+                            <label class="col-form-label" for="labelM">Ingrese el valor de M:</label>
+                            <input class="form-control" type="number" id="M" class="claseSemilla" name="semilla" >
+                            <label class="col-form-label" for="labelM">Ingrese cantidad de numeros generados:</label>
+                            <input class="form-control" type="number" id="cantidadGen" name="cantidad" ><br>
+                            
+                            <div class="text-center my-1 ">
+                                <button class="btn btn-primary" type="button" id="botonCalcular" >Calcular</button>
+                                <button class="btn btn-secondary mx-1" type="button" id="botonLimpiar">Limpiar</button>
+                            </div>
+                        </div>
+                    </form> 
+                </div>
+        </div>  
+        <table class="col-12 col-md-6 border text-center "style="height: 150px; overflow: auto;">
+            <thead>
+                <tr>
+                    <th scope="col">Orden</th>
+                    <th scope="col">Semilla</th>
+                    <th scope="col">A*X</th>
+                    <th scope="col">(A*X)MOD M</th>
+                    <th scope="col">Ui</th>
+                </tr>
+            </thead>
+            <tbody id="contenedor">
+            </tbody>
+        </table>   
+    </div>
+
+
+
+        <br><br>
+        <div class="distribucion">
+
+            <h1 class="text-center">Distribución </h1>
+            <div class="container-lg">
+                <h4 pclass="text-center">La obra social osde atiende al público de Lunes a Viernes en el horario de 8:00 hs a 17:00 hs. En promedio un total de 100 visitantes se acerca a atención al cliente, de ese grupo el 45% llega por consultas, un 35% para realizar un trámite (como solicitar reintegros, solicitar autorizaciones de prestaciones, etc.), un 15% para presentar quejas y el 5% restante para convertirse en afiliados de la obra social.
+
+                    Cuando una persona se registra como afiliado escoge entre uno de 5 planes 210, 310, 410, 450 y 510. Las probabilidades de que el nuevo afiliado haya escogido el plan 210 son de  55%, el 310 de 25%, el 410 de 10%, y los últimos 2 del 5% cada uno.
+                    
+                    Los trámites que pueden hacer los afiliados incluyen solicitud de reintegros, solicitud para autorizar una prestación y solicitud de medicamentos o accesorios ortopédicos. Las probabilidades de que dichas solicitudes ocurran es de 35%, 35% y 30% en ese orden respectivamente.
+                </h4>
+            </div>
+            
+                
+            
+            
+            
+            
+
+           
+
+        </div>
+        <br><br>
+        
+    </div>
+</body>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
