@@ -58,14 +58,5 @@ function mod(vC2, vM){
    
  
 
-function limpiarCampos (){
-    document.getElementById('semilla').value = "";
-    document.getElementById('campoA').value = "";
-    document.getElementById('campoM').value = "";
-    document.getElementById('inputCantidad').value = "";
-    
-}
 
 boton.addEventListener("click",verificarDatos);
-const botonLimpiar = document.getElementById('botonLimpiar');
-botonLimpiar.addEventListener("click",limpiarCampos);
