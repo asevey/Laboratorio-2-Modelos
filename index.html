@@ -26,17 +26,24 @@
     <div class="container-fluid row col-12 ">
         <div class="card border-primary " id="card" style="max-width: 22rem; margin: auto;">
             <div class="card-header row " >
-                <h2 class="text-center">Congruencial Multiplicativo</h2>         
+                <h2 class="text-center">Generador Itamaracá</h2>         
             </div>
                 <div class="card-body text-primary">
                     <form>
                         <div class="mb-3">
-                            <label class="col-form-label" for="labelSemilla">Ingrese el valor de la semilla:</label>
-                            <input class="form-control" type="number" id="semilla" class="claseSemilla" name="semilla" >
-                            <label class="col-form-label" for="labelA">Ingrese el valor de A:</label>
-                            <input class="form-control" type="number" id="A" class="numeroA" name="numeroA" >
-                            <label class="col-form-label" for="labelM">Ingrese el valor de M:</label>
-                            <input class="form-control" type="number" id="M" class="claseSemilla" name="semilla" >
+                            <label class="col-form-label" for="labeln">Ingrese el valor de N:</label>
+                            <input class="form-control" type="number" id="n" class="clasen" name="n" >
+
+                            <label class="col-form-label" for="labelx1">Ingrese el valor de X1:</label>
+                            <input class="form-control" type="number" id="x1" class="clasex1" name="x1"  max="n" >
+                            <label class="col-form-label" for="labelx2">Ingrese el valor de X2:</label>
+                            <input class="form-control" type="number" id="x2" class="numerox2" name="numerox2" >
+                            <label class="col-form-label" for="labelx3">Ingrese el valor de X3:</label>
+                            <input class="form-control" type="number" id="x3" class="clasex3" name="x3" >
+                            
+                            <label class="col-form-label" for="labelXrn">Ingrese el valor de Xrn:</label>
+                            <input class="form-control" type="number" id="Xrn" class="claseXrn" name="Xrn"  placeholder="Ingrese valor cercano a 2">
+                            
                             <label class="col-form-label" for="labelM">Ingrese cantidad de numeros generados:</label>
                             <input class="form-control" type="number" id="cantidadGen" name="cantidad" ><br>
                             
@@ -51,10 +58,13 @@
             <thead>
                 <tr>
                     <th scope="col">Orden</th>
-                    <th scope="col">Semilla</th>
-                    <th scope="col">A*X</th>
-                    <th scope="col">(A*X)MOD M</th>
-                    <th scope="col">Ui</th>
+                    <th scope="col">X1</th>
+                    <th scope="col">X2</th>
+                    <th scope="col">X3</th>
+                    <th scope="col">N</th>
+                    <th scope="col">Pn</th>
+                    <th scope="col">Xrn</th>
+                    <th scope="col">FRNS</th>
                 </tr>
             </thead>
             <tbody id="contenedor">

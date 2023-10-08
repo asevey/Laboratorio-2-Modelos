@@ -5,57 +5,64 @@ const cantidad = document.getElementById('inputCantidad');
 let valoresUi = [];
 
 function verificarDatos(){
-    var x1 = (document.getElementById('semilla').value) ;
-    var x2 = (document.getElementById('A').value) ;
-    var x3 =  (document.getElementById('M').value) ;
+    var cant = (document.getElementById('n').value) ;
+    var semilla1 = (document.getElementById('x1').value) ;
+    var semilla2 =  (document.getElementById('x2').value) ;
+    var semilla3 =  (document.getElementById('x3').value) ;
+    var x =  (document.getElementById('Xrn').value) ;
     var rest = document.getElementById("cantidadGen").value;
-    var semilla =parseInt(x1);
-    var a = parseInt(x2);
-    var m = parseInt(x3);
+
+    var n =parseInt(cant);
+    var x1 =parseInt(semilla1);
+    var x2 = parseInt(semilla2);
+    var x3 = parseInt(semilla3);
+    var Xrn= parseFloat(x);
     var stop = parseInt(rest);
 
-    console.log(`a: ${a} m: ${m} `);
-    if(x1 =="" || x2 =="" || x3=="" ){
+    console.log(`semilla1: ${x1} semilla2: ${x2} semilla3: ${x3} `);
+    if(semilla1 =="" || semilla3=="" || semilla2=="" ){
         alert("Por favor llene todos los campos");
         return;
     }
-    carga(semilla, a, m, 1, stop);
+
+    console.log(`x1: ${x1} x2: ${x2} x3: ${x3} `);
+    if(x1>n || x2>n|| x3>n ){
+        alert("Por favor ingrese valores entre 0 y N");
+        return;
+    }
+
+    carga(n,x1 ,x2, x3,Xrn ,1, stop);
 
 }
-
-function carga(semilla ,varA, varM, numeral, stop){
+function carga(n,x1 ,x2, x3,Xrn ,numeral, stop){
     if(numeral==(stop+1)){
         return;
     }
-    var c1= semilla * varA
-    var c2= mod(c1,varM)
-    var c3= c2/varM
-    c3=c3.toFixed(4)
+    var Pn= Math.abs(x3-x1)
+    Pn=Pn.toFixed(4)
+
+    var FRNS= Math.abs(n-(Pn*Xrn))
+    FRNS= FRNS.toFixed(4)
+    
 
     const tr = document.createElement('tr');
         tr.innerHTML = `
-        <td scope="row">${numeral++}</th>
-        <td>${semilla}</td>
-        <td>${c1}</td>
-        <td>${c2}</td>
-        <td>${c3}</td>`
+        <td scope="row">${numeral++}</td>
+        <td>${x1}</td>
+        <td>${x2}</td>
+        <td>${x3}</td>
+        <td>${n}</td>
+        <td>${Pn}</td>
+        <td>${Xrn}</td>
+        <td>${FRNS}</td>`
 
-        valoresUi.push(c3);
+        valoresUi.push(FRNS);
         contenedor.appendChild(tr);
         
-        carga(c2,varA ,varM, numeral, stop);
+        carga(n,x2 ,x3,Pn, Xrn,numeral, stop);
 }
 
-function mod(vC2, vM){
-    if(vM > vC2)
-        return vC2;
-    do{
-        vC2 = vC2 - vM;
-    }while(vC2 > vM );
 
-    return vC2;
-}
-   
  
 
 
