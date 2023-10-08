@@ -13,9 +13,9 @@ function verificarDatos(){
     var rest = document.getElementById("cantidadGen").value;
 
     var n =parseInt(cant);
-    var x1 =parseInt(semilla1);
-    var x2 = parseInt(semilla2);
-    var x3 = parseInt(semilla3);
+    var x1 =parseFloat(semilla1);
+    var x2 = parseFloat(semilla2);
+    var x3 = parseFloat(semilla3);
     var Xrn= parseFloat(x);
     var stop = parseInt(rest);
 
@@ -34,16 +34,15 @@ function verificarDatos(){
     carga(n,x1 ,x2, x3,Xrn ,1, stop);
 
 }
-function carga(n,x1 ,x2, x3,Xrn ,numeral, stop){
+function carga(n, x1 ,x2, x3,Xrn ,numeral, stop){
     if(numeral==(stop+1)){
         return;
     }
-    var Pn= Math.abs(x3-x1)
-    Pn=Pn.toFixed(4)
+    var Pn = Math.abs(x3-x1);
+    Pn = Pn.toFixed(4);
 
-    var FRNS= Math.abs(n-(Pn*Xrn))
-    FRNS= FRNS.toFixed(4)
-    
+    var FRNS = Math.abs(n-(Pn*Xrn))
+    FRNS = FRNS.toFixed(4);    
 
     const tr = document.createElement('tr');
         tr.innerHTML = `
@@ -54,12 +53,12 @@ function carga(n,x1 ,x2, x3,Xrn ,numeral, stop){
         <td>${n}</td>
         <td>${Pn}</td>
         <td>${Xrn}</td>
-        <td>${FRNS}</td>`
+        <td>${FRNS}</td>`;
 
         valoresUi.push(FRNS);
         contenedor.appendChild(tr);
         
-        carga(n,x2 ,x3,Pn, Xrn,numeral, stop);
+        carga(n, x2, x3, FRNS, Xrn, numeral, stop);
 }
 
 
