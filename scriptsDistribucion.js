@@ -1,6 +1,7 @@
 let indice =  0;
 
 let numerosAleatorios = []; 
+
 function main(){
     numerosAleatorios = cargarArrayNumerico();
 
@@ -8,7 +9,6 @@ function main(){
 
     let visitantesYDia = [];
 
-    indice =  0;
     let visitantesDia = 0;
     let diasCon120 = 0;
     let afiliadosNuevosTotales = 200;
@@ -29,28 +29,33 @@ function main(){
 
     visitantesYDia.forEach(elemento =>{
         let afiliadosDia = 0;
+        indice =  0;
         afiliadosDia = binomial(elemento.visitantes, 0.25, afiliadosDia);
         afiliadosNuevosTotales = afiliadosNuevosTotales + afiliadosDia;
 
+        let msjVisitantes = `Visitantes: ${elemento.visitantes}`;
         let mensajeAfDia = `Número de visitantes que se registraron como afiliados: ${afiliadosDia}`;
         let msjDia = `Día: ${elemento.numDia}`;
 
         let fila = document.createElement("tr");
         let colMsj1 = document.createElement("td");
         let colMsj2 = document.createElement("td");
-        colMsj1.appendChild(document.createTextNode(mensajeAfDia));
-        colMsj2.appendChild(document.createTextNode(msjDia));
+        let colMsj3 = document.createElement("td");
+        colMsj1.appendChild(document.createTextNode(msjVisitantes));
+        colMsj2.appendChild(document.createTextNode(mensajeAfDia));
+        colMsj3.appendChild(document.createTextNode(msjDia));
         fila.appendChild(colMsj1);
         fila.appendChild(colMsj2);
+        fila.appendChild(colMsj3);
         cuerpoTabla.appendChild(fila);
-    });
-        
+    });        
     let mensajeFinal = "";
+    
     let afiliadosAntesDe5 = binomialNegativa(5,0.75);
     if(afiliadosAntesDe5 <= afiliadosNuevosTotales){
-        mensajeFinal = mensajeFinal + `Número de afiliados nuevos antes de que se registren 5 afiliados con plan 310 ${afiliadosAntesDe5}`;
+        mensajeFinal = mensajeFinal + `Número de afiliados nuevos antes de que se registren 5 afiliados con plan 310: ${afiliadosAntesDe5}`;
     }else{
-        mensajeFinal = mensajeFinal + `Número de afiliados nuevos antes de que se registren 5 afiliados con plan 310 ${afiliadosNuevosTotales}`;   
+        mensajeFinal = mensajeFinal + `Número de afiliados nuevos antes de que se registren 5 afiliados con plan 310: ${afiliadosNuevosTotales}`;   
     }
     let mensajeFinal2 = `Cantidad de días en que hubo más de 120 visitantes: ${diasCon120}`;
 
@@ -73,18 +78,12 @@ function cargarArrayNumerico(){
 }
 
 function devolverU(){
-    try{
-        if(indice > (numerosAleatorios.length - 1)){
-            throw "La cantidad de números aleatorios generados no han sido suficientes par la simulación";
-        }else{
-            let u = numerosAleatorios[indice];
-            indice = indice + 1;
-            return u; 
-        }
+    if (indice >= numerosAleatorios.length) {
+        indice = 0;
     }
-    catch(err){
-        alert(err);
-    }
+    let u = numerosAleatorios[indice];
+    indice++;
+    return u; 
 }
 
 //---------------distribuciones-------------------------------
@@ -95,8 +94,8 @@ function normal(esperanza, desviacion){
         sum = sum + u;
     }
     
-    let sumEntera = Math.floor(sum);
-    return desviacion*(sumEntera - 6) + esperanza;
+    // let sumEntera = Math.floor(sum);
+    return Math.round(desviacion*(sum - 6) + esperanza);
 }
 
 function binomial(n,probExito, va){
