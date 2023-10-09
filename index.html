@@ -12,10 +12,12 @@
             document.querySelector("#ejecucion").onclick = main;
         });
     </script>
+    
+    
 </head>
 <body>
 
-    <div class=" border-bottom  " >
+    <div class=" border-bottom border border-2 " >
         <header class="text-center ">
                 <span class="fs-3">Facultad de Tecnologia y Ciencias Aplicadas</span><br>           
                 <span class="fs-3">Modelos y simulacion</span>
@@ -23,7 +25,7 @@
       </div>
     <br><br>
 
-    <div class="container-fluid row col-12 ">
+    <div class="container-fluid row col-12 "> 
         <div class="card border-primary " id="card" style="max-width: 22rem; margin: auto;">
             <div class="card-header row " >
                 <h2 class="text-center">Generador Itamaracá</h2>         
@@ -35,11 +37,11 @@
                             <input class="form-control" type="number" id="n" class="clasen" name="n" >
 
                             <label class="col-form-label" for="labelx1">Ingrese el valor de X1:</label>
-                            <input class="form-control" type="number" id="x1" class="clasex1" name="x1"  max="n" >
+                            <input class="form-control" type="number" id="x1" class="clasex1" name="x1"  max="n" placeholder="Ingrese valor entre 0 y N">
                             <label class="col-form-label" for="labelx2">Ingrese el valor de X2:</label>
-                            <input class="form-control" type="number" id="x2" class="numerox2" name="numerox2" >
+                            <input class="form-control" type="number" id="x2" class="numerox2" name="numerox2" placeholder="Ingrese valor entre 0 y N">
                             <label class="col-form-label" for="labelx3">Ingrese el valor de X3:</label>
-                            <input class="form-control" type="number" id="x3" class="clasex3" name="x3" >
+                            <input class="form-control" type="number" id="x3" class="clasex3" name="x3" placeholder="Ingrese valor entre 0 y N">
                             
                             <label class="col-form-label" for="labelXrn">Ingrese el valor de Xrn:</label>
                             <input class="form-control" type="number" id="Xrn" class="claseXrn" name="Xrn"  placeholder="Ingrese valor cercano a 2">
@@ -54,22 +56,28 @@
                     </form> 
                 </div>
         </div>  
-        <table class="col-12 col-md-6 border text-center "style="height: 150px; overflow: auto;">
-            <thead>
-                <tr>
-                    <th scope="col">Orden</th>
-                    <th scope="col">X1</th>
-                    <th scope="col">X2</th>
-                    <th scope="col">X3</th>
-                    <th scope="col">N</th>
-                    <th scope="col">Pn</th>
-                    <th scope="col">Xrn</th>
-                    <th scope="col">FRNS</th>
-                </tr>
-            </thead>
-            <tbody id="contenedor">
-            </tbody>
+       
+        
+           
+        <table class="col-12 col-md-6 border text-center "style="height: 150px; overflow: auto; ">
+
+                <thead>
+                    <tr>
+                        <th scope="col">Orden</th>
+                        <th scope="col">X1</th>
+                        <th scope="col">X2</th>
+                        <th scope="col">X3</th>
+                        <th scope="col">N</th>
+                        <th scope="col">Pn</th>
+                        <th scope="col">Xrn</th>
+                        <th scope="col">FRNS</th>
+                    </tr>
+                </thead>
+                <tbody id="contenedor">
+                </tbody>
         </table>   
+          
+        
     </div>
 
 
@@ -89,29 +97,28 @@
                     ¿Cuántos días se acercaron a atención al cliente más de 120 visitantes? 
                     De los visitantes en un día¿Cuántos nuevos afiliados se unieron?
                     ¿Cuántos nuevos afiliados se registraron hasta que se registró al quinto que escogiera el plan 310?.
-                </h5>
+                </h5><br>
             </div>
 
-            <button class="btn btn-success" id="ejecucion">Ejecutar simulación</button>
-            
-            <table class="table table-dark">
-                <thead>
-                    <tr>
-                        <th colspan="2">Detalle por día</th>
-                    </tr>
-                </thead>
-                <tbody id="tablaDetalle">
+            <div class="text-center my-1 ">
+            <button class="btn btn-primary " id="ejecucion">Ejecutar simulación</button>
+            </div>
 
-                </tbody>
-            </table>   
-            <div id="divRespFinales"></div>
-            
-            
-            
-            
+            <div class="container">
+                <table class="table table-dark text-center">
+                    <thead>
+                        <tr>
+                            <th colspan="3">Detalle por día</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaDetalle">
 
-           
-
+                    </tbody>
+                </table>   
+                <div id="divRespFinales" class="container text-center border border-3" style="font-size: 7mm; font-weight: 600;"></div>
+            </div>
+            
+            
         </div>
         <br><br>
         
