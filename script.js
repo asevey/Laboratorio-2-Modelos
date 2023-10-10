@@ -31,6 +31,9 @@ function verificarDatos(){
         return;
     }
 
+    let botonEjecutar = document.getElementById('ejecucion');
+    botonEjecutar.removeAttribute('disabled');
+
     carga(n,x1 ,x2, x3,Xrn ,1, stop);
 
 }

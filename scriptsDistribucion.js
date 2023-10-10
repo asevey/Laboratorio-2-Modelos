@@ -30,7 +30,7 @@ function main(){
     visitantesYDia.forEach(elemento =>{
         let afiliadosDia = 0;
         indice =  0;
-        afiliadosDia = binomial(elemento.visitantes, 0.25, afiliadosDia);
+        afiliadosDia = binomial(elemento.visitantes, 0.10, afiliadosDia);
         afiliadosNuevosTotales = afiliadosNuevosTotales + afiliadosDia;
 
         let msjVisitantes = `Visitantes: ${elemento.visitantes}`;
