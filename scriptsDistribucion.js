@@ -53,19 +53,43 @@ function main(){
     
     let afiliadosAntesDe5 = binomialNegativa(5,0.75);
     if(afiliadosAntesDe5 <= afiliadosNuevosTotales){
-        mensajeFinal = mensajeFinal + `Número de afiliados nuevos antes de que se registren 5 afiliados con plan 310: ${afiliadosAntesDe5}`;
+        mensajeFinal = mensajeFinal + `Número de afiliados nuevos antes de que se registren 5 afiliados con plan 310:   ${afiliadosAntesDe5}<br>
+        Conocer esta cantidad puede ser muy valioso para la toma de decisiones, la mejora 
+        de los servicios y la adaptación a las necesidades de los clientes en cada plan.`;
     }else{
-        mensajeFinal = mensajeFinal + `Número de afiliados nuevos antes de que se registren 5 afiliados con plan 310: ${afiliadosNuevosTotales}`;   
+        mensajeFinal = mensajeFinal + `Número de afiliados nuevos antes de que se registren 5 afiliados con plan 310:   ${afiliadosNuevosTotales}<br>
+        Conocer esta cantidad puede ser muy valioso para la toma de decisiones, la mejora 
+        de los servicios y la adaptación a las necesidades de los clientes en cada plan.`;   
     }
-    let mensajeFinal2 = `Cantidad de días en que hubo más de 120 visitantes: ${diasCon120}`;
+    let mensajeFinal2 = `Cantidad de días en que hubo más de 120 visitantes:   ${diasCon120}<br>
+    Conocer este resultado puede ayudar a tomar decisiones informadas sobre la 
+    gestión de recursos, planificación de personal, la mejora de la experiencia del cliente y la optimización de operaciones en general. `;
+    let tituloConclusion = `Conclusion final`;
+    let mensajeFinal3 = `<br>Estos resultados pueden ser de mucha ayuda a la hora de identificar
+    los dias que atraen a mas visitantes y en consecuencia, planificar eventos especiales, promociones o campañas de 
+    marketing para aprovechar esos picos y aumentar el numero de afiliaciones. 
+    <br>Tambien se puede programar y asignar mas o menos personal de manera más eficiente, segun la demanda 
+    para mejorar la eficiencia de la atencion y controlar los costos laborales y operativos. 
+    <br>Si el estudio revela que hay una proporción baja de visitantes que se estan afiliando al plan 310, podría indicarle que 
+    deberia tomar medidas para identificar posibles obstáculos o barreras que están impidiendo que las personas se afilien y plantearse mejorar 
+    los beneficios brindados o intentar retener a esos clientes con ofertas especiales, programas de incentivos u otras estrategias de marketing.
+    <br>Por otro lado al identificar que el plan 310 está aumentando sus afiliados, pueden ajustar sus estrategias como la asignacion 
+    de más personal o recursos a la promoción y administración de este.
+    `;
 
     let divRespF = document.getElementById("divRespFinales");
     let p = document.createElement("p");
     let p2 = document.createElement("p");
+    let h1 = document.createElement("h1");
+    let p3 = document.createElement("p");
     p.innerHTML = mensajeFinal;
     p2.innerHTML = mensajeFinal2;
+    h1.innerHTML = tituloConclusion;
+    p3.innerHTML = mensajeFinal3;
     divRespF.appendChild(p);
     divRespF.appendChild(p2);
+    divRespF.appendChild(h1);
+    divRespF.appendChild(p3);
 }
 
 //---------------Numeros generados------------------------------
