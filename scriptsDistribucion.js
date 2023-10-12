@@ -64,17 +64,17 @@ function main(){
     let mensajeFinal2 = `Cantidad de días en que hubo más de 120 visitantes:   ${diasCon120}<br>
     Conocer este resultado puede ayudar a tomar decisiones informadas sobre la 
     gestión de recursos, planificación de personal, la mejora de la experiencia del cliente y la optimización de operaciones en general. `;
-    let tituloConclusion = `Conclusion final`;
+    let tituloConclusion = ` Conclusion final`;
     let mensajeFinal3 = `<br>Estos resultados pueden ser de mucha ayuda a la hora de identificar
     los dias que atraen a mas visitantes y en consecuencia, planificar eventos especiales, promociones o campañas de 
-    marketing para aprovechar esos picos y aumentar el numero de afiliaciones. 
+    marketing para aprovechar esos picos y aumentar el numero de afiliaciones. <br>
     <br>Tambien se puede programar y asignar mas o menos personal de manera más eficiente, segun la demanda 
     para mejorar la eficiencia de la atencion y controlar los costos laborales y operativos. 
-    <br>Si el estudio revela que hay una proporción baja de visitantes que se estan afiliando al plan 310, podría indicarle que 
+    <br><br>Si el estudio revela que hay una proporción baja de visitantes que se estan afiliando al plan 310, podría indicarle que 
     deberia tomar medidas para identificar posibles obstáculos o barreras que están impidiendo que las personas se afilien y plantearse mejorar 
-    los beneficios brindados o intentar retener a esos clientes con ofertas especiales, programas de incentivos u otras estrategias de marketing.
+    los beneficios brindados o intentar retener a esos clientes con ofertas especiales, programas de incentivos u otras estrategias de marketing.<br>
     <br>Por otro lado al identificar que el plan 310 está aumentando sus afiliados, pueden ajustar sus estrategias como la asignacion 
-    de más personal o recursos a la promoción y administración de este.
+    de más personal o recursos a la promoción y administración de este.<br>
     `;
 
     let divRespF = document.getElementById("divRespFinales");
